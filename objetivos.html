@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OBJETIVOS</title>
+  <style>
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f5f5;
+    }
+
+    
+    .gif-header {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start; 
+      gap: 40px; 
+      background: #222;
+      padding: 20px 40px;
+      color: #fff;
+      position: relative;
+    }
+
+    .gif-header img {
+      max-width: 160px;
+      border-radius: 100px;
+    }
+
+    
+    .menu-sandwich {
+      width: 35px;
+      height: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+      background: none;
+      border: none;
+      z-index: 1001;
+      position: relative;
+    }
+
+    .menu-sandwich span {
+      display: block;
+      height: 4px;
+      background: #fff;
+      border-radius: 4px;
+      transition: 0.3s;
+    }
+
+    
+    .menu {
+      position: fixed;
+      top: 0;
+      left: -220px; 
+      width: 200px;
+      height: 100%;
+      background: #f1f1f1;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.3);
+      padding-top: 60px;
+      transition: 0.3s;
+      z-index: 1000;
+    }
+
+    .menu a {
+      display: block;
+      padding: 15px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    .menu a:hover {
+      background: #ddd;
+    }
+
+    
+    .menu.active {
+      left: 0;
+    }
+
+    
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      display: none;
+      z-index: 999;
+    }
+
+    .overlay.active {
+      display: block;
+    }
+
+    
+    .section {
+      padding: 30px 20px;
+      margin: 20px;
+      border-radius: 12px;
+      background: #fff;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .title {
+      background: #0077b6;
+      color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      font-size: 22px;
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .images {
+      display: flex;
+      gap: 50px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .item {
+      text-align: center;
+      width: 200px;
+    }
+
+    .item img {
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    .item h3 {
+      margin-top: 10px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .item p, .item ul {
+      font-size: 14px;
+      text-align: justify;
+    }
+
+    .section:nth-of-type(1) { background: #e0f7fa; }
+    .section:nth-of-type(2) { background: #ffe0b2; }
+    .section:nth-of-type(3) { background: #e1bee7; }
+
+  </style>
+</head>
+<body>
+
+  
+  <div class="gif-header">
+
+    <button class="menu-sandwich" onclick="toggleMenu()" aria-label="Abrir menú">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <img src="C:\Users\leo_2\OneDrive\Escritorio\fast\Logo.jfif" alt="Logo FAST INVENTORY">
+  </div>
+
+
+  <nav class="menu" id="menu">
+    <a href="C:\Users\leo_2\OneDrive\Escritorio\fast\paginas\Descripciondelproyecto.html" target="_blank" onclick="toggleMenu()">Descripcion del proyecto</a>
+    <a href="C:\Users\leo_2\OneDrive\Escritorio\fast\paginas\Organigramas.html" target="_blank" onclick="toggleMenu()">Organigramas</a>
+    <a href="C:\Users\leo_2\OneDrive\Escritorio\fast\paginas\objetivos.html" target="_blank" onclick="toggleMenu()">Objetivos</a>
+    <a href="C:\Users\leo_2\OneDrive\Escritorio\fast\mar.html" target="_blank" onclick="toggleMenu()">Resumen</a>
+  </nav>
+
+  <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+
+  
+  <div class="section">
+    <div class="title">Objetivos</div>
+    <div class="images">
+      <div class="item">
+        <img src="C:\Users\leo_2\OneDrive\Escritorio\fast\paginas\objetivo.jfif" alt="Objetivo Específico">
+        <h3>Objetivo Específico</h3>
+        <p>Consolidar a la empresa como un referente nacional e internacional en el sector tecnológico, a través de la investigación, el diseño, el desarrollo y la comercialización de soluciones digitales innovadoras que respondan a las necesidades del mercado global.</p>
+      </div>
+      <div class="item">
+        <img src="C:\Users\leo_2\OneDrive\Escritorio\fast\paginas\sui.jfif" alt="Objetivo General">
+        <h3>Objetivo General</h3>
+        <p>Desarrollar e integrar soluciones digitales innovadoras que respondan de manera eficiente a las necesidades de individuos y empresas, fomentando la transformación digital y mejorando la calidad de vida.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("menu").classList.toggle("active");
+      document.getElementById("overlay").classList.toggle("active");
+    }
+  </script>
+</body>
+</html>
